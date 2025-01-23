@@ -14,3 +14,5 @@ It includes:
 * sample [Simulation](https://docs.gatling.io/reference/glossary/#simulation) class,
 demonstrating sufficient Gatling functionality
 * proper source file layout
+
+Controllers used: https://videogamedb.uk/swagger-ui/index.html#/api-video-games-controller
