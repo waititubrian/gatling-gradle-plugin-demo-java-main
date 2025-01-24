@@ -1,6 +1,7 @@
 package videogamedb;
 
 import io.gatling.javaapi.core.ChainBuilder;
+import io.gatling.javaapi.core.FeederBuilder;
 import io.gatling.javaapi.core.ScenarioBuilder;
 import io.gatling.javaapi.core.Simulation;
 import io.gatling.javaapi.http.HttpProtocolBuilder;
@@ -16,6 +17,10 @@ public class VideoGameDbSimulation extends Simulation {
             .baseUrl("https://videogamedb.uk/api")
             .acceptHeader("application/json")
             .contentTypeHeader("application/json");
+
+    // FEEDER FOR TEST DATA
+    private static FeederBuilder.FileBased<Object> jsonFeeder = jsonFile("data/gameJsonFile.json").random();
+
 
     // HTTP CALLS
     private static ChainBuilder getAllGames =
@@ -56,13 +61,13 @@ public class VideoGameDbSimulation extends Simulation {
     // 5. Delete newly created game
     private ScenarioBuilder scn = scenario("Video Game DB Stress Test")
             .exec(getAllGames)
-            .pause(2)
+            .pause(5)
             .exec(authenticate)
-            .pause(2)
+            .pause(5)
             .exec(createNewGame)
-            .pause(2)
+            .pause(5)
             .exec(getLastPostedGame)
-            .pause(2)
+            .pause(5)
             .exec(deleteLastPostedGame);
 
     // Simulation
