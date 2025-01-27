@@ -25,7 +25,7 @@ public class VideoGameDbSimulation extends Simulation {
     // HTTP CALLS
     private static ChainBuilder getAllGames =
             exec(http("Get All Video Games")
-            .get("/videogame")
+            .get("/v2/videogame")
                     .check(status().is(200)));
 
     private static ChainBuilder authenticate =
@@ -39,18 +39,18 @@ public class VideoGameDbSimulation extends Simulation {
 
     private static ChainBuilder createNewGame =
             exec(http("Create New Game")
-            .post("/videogame")
+            .post("/v2/videogame")
             .header("Authorization", "Bearer ${jwtToken}")
             .body(ElFileBody("bodies/newGameTemplate.json")).asJson()
                     .check(status().is(200)));
 
     private static ChainBuilder getLastPostedGame =
             exec(http("Get Last Posted Game")
-            .get("/videogame/1"));
+            .get("/v2/videogame/1"));
 
       private static ChainBuilder deleteLastPostedGame =
             exec(http("Delete Last Posted Game")
-            .delete("/videogame/1")
+            .delete("/v2/videogame/1")
             .header("Authorization", "Bearer ${jwtToken}"));
 
     // Scenario
