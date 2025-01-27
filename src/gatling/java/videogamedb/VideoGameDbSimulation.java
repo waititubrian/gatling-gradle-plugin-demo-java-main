@@ -1,14 +1,9 @@
 package videogamedb;
 
-import io.gatling.javaapi.core.ChainBuilder;
-import io.gatling.javaapi.core.FeederBuilder;
-import io.gatling.javaapi.core.ScenarioBuilder;
-import io.gatling.javaapi.core.Simulation;
-import io.gatling.javaapi.http.HttpProtocolBuilder;
-
+import io.gatling.javaapi.core.*;
+import io.gatling.javaapi.http.*;
 import static io.gatling.javaapi.core.CoreDsl.*;
-import static io.gatling.javaapi.http.HttpDsl.http;
-import static io.gatling.javaapi.http.HttpDsl.status;
+import static io.gatling.javaapi.http.HttpDsl.*;
 
 public class VideoGameDbSimulation extends Simulation {
 
