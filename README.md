@@ -14,4 +14,4 @@ It includes:
 demonstrating sufficient Gatling functionality
 * proper source file layout
 
-Controllers used: https://videogamedb.uk/swagger-ui/index.html#/api-video-games-controller
+Controllers used: https://simulations.videogamedb.uk/swagger-ui/index.html#/api-video-games-controller

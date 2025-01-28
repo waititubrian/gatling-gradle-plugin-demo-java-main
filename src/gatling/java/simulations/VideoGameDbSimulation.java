@@ -1,4 +1,4 @@
-package videogamedb;
+package simulations;
 
 import io.gatling.javaapi.core.*;
 import io.gatling.javaapi.http.*;
